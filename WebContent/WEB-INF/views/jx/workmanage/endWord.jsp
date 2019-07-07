@@ -1,0 +1,116 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String rootPath = request.getContextPath();
+	String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort()+ rootPath + "/";
+	String username=  (String)request.getSession().getAttribute("username");
+%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>我的工作</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-store, must-revalidate"/>
+		<meta http-equiv="expires" content="0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/font-awesome4/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/dist/css/AdminLTE.css">
+	    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/dist/css/skins/_all-skins.min.css">
+	    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/quit/sweetalert.css">
+	    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/css/public.css">
+	    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/layer/skin/layer.css">
+	    <script src="<%=rootPath %>/publish/project1/UILib/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	    <script src="<%=rootPath %>/publish/project1/UILib/bootstrap/js/bootstrap.min.js"></script>
+	    <script src="<%=rootPath %>/publish/project1/UILib/dist/js/app.min.js"></script>
+    
+        <script src="<%=rootPath %>/publish/project1/UILib/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="<%=rootPath %>/publish/project1/UILib/plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="<%=rootPath %>/publish/project1/js/jx/workmanage/my_word.js"></script>
+        <script type="text/javascript" src="<%=rootPath %>/publish/project1/UILib/layer/layer.js"></script>
+        <script type="text/javascript">
+        	var loginUserId="<%=username%>";
+        	var basePath="<%=rootPath%>";
+        </script>
+	</head>
+	 
+	<body class="hold-transition sidebar-mini skin-blue">
+		<div class="wrapper">
+			
+		    <div class="wrapper">
+			
+		    <header class="main-header">
+		        <a href="#" class="logo"><span class="logo-lg">$PROJECT_NAME</a>
+		        <nav class="navbar navbar-static-top">
+		            <div class="navbar-custom-menu">
+		                <ul class="nav navbar-nav">
+		                    <li class="dropdown user user-menu">
+		                        <a href="#" class="dropdown-toggle" title="用户名">
+		                            <img src="<%=rootPath %>/img/user1.png" class="user-image" />
+		                            <span class="hidden-xs"><%=request.getSession().getAttribute("username") %></span>
+		                        </a>
+		                    </li>
+		                    <li>
+		                        <a href="<%=rootPath %>/publish/project1/login.jsp" id="quit" title="退出系统"><i class="fa fa-power-off"></i></a>
+		                    </li>
+		                </ul>
+		            </div>
+		        </nav>
+		    </header>
+
+	    <aside class="main-sidebar">
+	        <section class="sidebar">
+	            <ul class="sidebar-menu"></ul>
+	        </section>
+	    </aside>
+		
+		    <div class="content-wrapper">     
+		        <section class="content-header">
+		            <ol class="breadcrumb">
+		                <li><a href="<%=rootPath %>/views/index.jsp"><i class="fa fa-home"></i> 首页</a></li>
+		                <li class="active">我的工作</li>
+		            </ol>
+		        </section>
+		        <section class="content">
+		            <div class="row">
+		                <div class="col-md-12">
+		                	<div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs">
+                                    <li <c:if test="${type==1||type==null }">class="active"</c:if> ><a href="javascript: void(0);" onclick="tabLoad(1,this);">待办<span class="hidden-xs">工作</span></a></li>
+                                    <li <c:if test="${type==2 }">class="active"</c:if> ><a href="javascript: void(0);" onclick="tabLoad(2,this);">办结<span class="hidden-xs">工作</span></a></li>
+                                    <li <c:if test="${type==3 }">class="active"</c:if> ><a href="javascript: void(0);" onclick="tabLoad(3,this);">委托<span class="hidden-xs">工作</span></a></li>
+                                    <li <c:if test="${type==4 }">class="active"</c:if> ><a href="javascript: void(0);" onclick="tabLoad(4,this);">会签<span class="hidden-xs">工作</span></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="one_tab">
+                                        <jsp:include page="daiban.jsp"></jsp:include>
+                                    </div>
+                                </div>
+                            </div>
+		                </div>
+		            </div>
+		        </section>
+		    </div>
+		    <div class="modal fade in" id="myModal1" style="z-index: 1049;" >
+				<div class="modal-dialog" role="document">
+			    	<div class="modal-content">
+				        <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				            <h4 class="modal-title" id="myModalLabel">历史流程记录</h4>
+				        </div>
+				        <div class="modal-body" style="height: 500px; overflow-y: auto;">
+				        	<ul class="todo-list ui-sortable todoCursor" id="footPointUI"></ul>
+				        </div>
+			        </div>
+			    </div>
+			</div>
+		    <jsp:include page="/common/footer.jsp"></jsp:include>
+		</div>
+		<jsp:include page="/publish/project1/public/commBaseVariable.jsp"></jsp:include>
+	</body>
+	<script type="text/javascript">
+		tabLoad('${type}',this);
+	</script>
+</html>

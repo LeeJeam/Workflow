@@ -1,0 +1,389 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/common/taglib.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix='fmt' uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+String rootPath = request.getContextPath();
+String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort()+ rootPath + "/";
+%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>流程查询</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		 <c:set value="<%=rootPath %>" var="rootPath"></c:set>
+       <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/font-awesome4/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/quit/sweetalert.css">
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/css/public.css">
+	<link rel="stylesheet" href="<%=rootPath %>/publish/project1/css/liucheng.css">
+
+
+
+    <script src="<%=rootPath %>/publish/project1/UILib/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/publish/project1/UILib/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="<%=rootPath %>/publish/project1/UILib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<%=rootPath %>/publish/project1/UILib/quit/sweetalert.min.js"></script>
+    <script src="<%=rootPath %>/js/quit.js"></script>
+    <script src="<%=rootPath %>/publish/project1/UILib/dist/js/app.min.js"></script>
+    <script src="<%=rootPath %>/publish/project1/UILib/dist/js/demo.js"></script>
+
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/bootstrapValidator/css/bootstrapValidator.min.css">
+    <script src="<%=rootPath %>/publish/project1/UILib/bootstrapValidator/js/bootstrapValidator.min.js"></script>
+
+    <!--table-->
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/plugins/datatables/dataTables.bootstrap.css">
+    <script src="<%=rootPath %>/publish/project1/UILib/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<%=rootPath %>/publish/project1/UILib/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!---->
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <script type="text/javascript" src="<%=rootPath %>/publish/project1/UILib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/publish/project1/UILib/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+    <link rel="stylesheet" href="<%=rootPath %>/publish/project1/UILib/plugins/zTree/zTree/zTreeStyle/zTreeStyle.css">
+    <script type="text/javascript" src="<%=rootPath %>/publish/project1/UILib/plugins/zTree/jquery.ztree.core-3.5.min.js"></script>
+
+    <link rel="stylesheet" href="<%=rootPath %>/js/file/uploadify.css">
+    <script type="text/javascript" src="<%=rootPath %>/js/filecommon.js"></script>
+    <script src="<%=rootPath %>/js/file/jquery.uploadify.min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript" src="${rootPath}/js/custom/views/releasesmanage/TablePageInit.js"></script>
+    <script type="text/javascript" src="${rootPath}/js/custom/views/control/form/formPageConfig.js"></script>
+
+
+
+    <script type="text/javascript" src="<%=rootPath %>/js/custom/views/releasesmanage/table-view.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/js/custom/views/releasesmanage/button.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/js/jquery.form.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/js/datadetail.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/publish/project1/UILib/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/js/custom/views/functionpagemanage/flow/date.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/js/common.js"></script>
+    <script type="text/javascript" src="<%=rootPath %>/js/formCommJs.js"></script>
+    <script type="text/javascript" src="${rootPath}/js/custom/views/control/form/flowCommPage.js"></script>
+    <script src="<%=rootPath %>/publish/project1/js/jquery.qtip.pack.js" ></script>
+        <script src="<%=rootPath %>/publish/project1/js/jquery.outerhtml.js" ></script>
+    <script type="text/javascript" src="<%=rootPath %>/js/custom/views/control/form/bootstrap-validator.js"></script>
+    <script type="text/javascript" src="${rootPath}/js/custom/views/releasesmanage/FormPageBtnInit.js"></script>
+
+        <script type="text/javascript">
+       
+    </script>
+</head>
+<body class="hold-transition skin-blue fixed sidebar-mini" id="chat-box">
+<div class="wrapper">
+	<input type="hidden" id="rootPath" value="<%=rootPath %>">
+    <header class="main-header">
+        <a href="#" class="logo"><span class="logo-lg">$PROJECT_NAME</a>
+        <nav class="navbar navbar-static-top">
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" title="用户名">
+                            <img src="<%=rootPath %>/img/user1.png" class="user-image" />
+                            <span class="hidden-xs" id="usernamespan"><%=request.getSession().getAttribute("username") %></span>
+							<span class="hidden-xs" style="display:none" id="rolenamespan"><%=request.getSession().getAttribute("jname") %></span>
+							<span class="hidden-xs" style="display:none" id="bumennamespan"><%=request.getSession().getAttribute("bname") %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%=rootPath %>/publish/project1/login.jsp" id="quit" title="退出系统"><i class="fa fa-power-off"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="header">功能菜单</li>
+                <c:if test="${!empty menudata }">
+                    <c:forEach items="${menudata }" var="data" varStatus="status">
+                        <li class="treeview <c:if test="${data.id==parentId}">active</c:if>" ref="${data.id}">
+                <a href="javascript:void(0)" <c:if test="${empty data.children}">onclick="gotopage('${data.url}','${data.id}')"</c:if>>
+                <i class="fa fa-circle-o text-green"></i>
+                <span>${data.menu_name }</span>
+                <c:if test="${!empty data.children}">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </c:if>
+                </a>
+                <c:if test="${data.id == menuId}">
+                    <c:set value="<li><i class='fa'></i>${data.menu_name}</li>" var="menuHeader"></c:set>
+                </c:if>
+                <c:if test="${!empty data.children }">
+                    <ul class="treeview-menu">
+                        <c:forEach items="${data.children }" var="children" varStatus="status">
+                            <li><a href="javascript:gotopage('${children.url}','${children.id}')"><i class="fa fa-circle-o"></i> ${children.menu_name }
+                                <c:if test="${!empty children.children}">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </c:if>
+                            </a>
+                                <c:if test="${!empty children.children}">
+                                    <ul class="treeview-menu">
+                                        <c:forEach items="${children.children }" var="child" varStatus="status">
+                                            <li><a href="javascript:gotopage('${child.url}','${child.id}')"><i class="fa fa-circle-o"></i>${child.menu_name }</a></li>
+                                        </c:forEach>
+                                    </ul>
+                                </c:if>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </c:if>
+                </li>
+                </c:forEach>
+                </c:if>
+            </ul>
+        </section>
+    </aside>
+               
+			<div class="content-wrapper">
+				<section class="content-header">
+					<ol class="breadcrumb">
+						<li><a href="<%=rootPath %>/menu.jsp"><i class="fa fa-home"></i> 首页</a></li>
+						<li class="active">工作查询</li>
+					</ol>
+				</section>
+				<section class="content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="box box-primary">
+								<div class="box-header with-border">
+									<form id="searchForm">
+		                            	<h3 class="box-title box-title-name" style="margin-top: 10px;">流程查询</h3>
+			                            <div class="input-group col-md-2 pull-right">
+			                           		<input type="text" id="" name="" class="form-control" placeholder="请输入关键字" />
+			                                <span class="input-group-btn">
+			                                	<button type="button" class="btn btn-primary btn-flat"><i class="fa fa-search"></i></button>
+			                                </span>
+			                            </div>
+			                            <div class="input-group col-md-2 pull-right selectUive">
+			                            	<select class="form-control" name="">
+	                                            <option value="">所有类型</option>
+		                                        <option value="1">1</option>
+	                                        </select>
+			                            </div>
+		                            </form>
+								</div>
+								<div class="box-body">
+									<table id="dataTable" class="table table-bordered table-hover text-center">
+                                         <thead>
+                                             <tr>
+                                                 <th width="5%">序号</th>
+                                                 <th width="10%">流程名称</th>
+                                                 <th width="10%">流程类型</th>
+                                                 <th width="10%">创建人</th>
+                                                 <th width="10%">开始时间</th>
+                                                 <th width="10%">结束时间</th>
+                                                 <th width="10%">办理人</th>
+                                                 <th width="10%">流程状态</th>
+                                                 <th width="10%">操作</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                         </tbody>
+                                     </table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="modal fade" id="previewModal">
+			   <div class="modal-dialog" role="document">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                    <span aria-hidden="true">×</span>
+			                </button>
+			                <h4 class="modal-title">流程表单</h4>
+			            </div>
+			            <div class="modal-body" id="modal-body">
+			            	 
+			            </div>
+			            
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-default btn-sm" id="form_btn_cance" data-dismiss="modal">取消</button>
+			                <button type="button" class="btn btn-primary btn-sm" id="form_btn_save" onclick="formSubmit(0)">保存</button>
+			                <button type="button" class="btn btn-primary btn-sm" id="form_btn_submit" onclick="formSubmit(1)">提交</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<jsp:include page="/common/footer.jsp"></jsp:include>
+			<jsp:include page="/publish/project1/public/commBaseVariable.jsp"></jsp:include>
+		</div>
+		<script type="text/javascript">
+		var businessId="";
+		var processFlag="process";
+		var process_key="";
+		var task_Id="";
+		
+		function taskHandle(processid,taskid,entityId){
+			process_key=processid;
+			task_Id=taskid;
+			var uu=basePath+"/formOpration/queryFormJoinProcess.htm";
+	 		if (typeof(isCrossDomain)!=undefined&&typeof(isCrossDomain)!="undefined"&&isCrossDomain)
+			{
+				uu += "?"+commVariable;
+			}
+			$(".content").empty();
+			$(".content").append(FlowCommPage.style);
+			//查询流程执行的历史表单
+			$.ajax({
+					type:"post",
+					url:uu,
+					data:{proccessId:processid},
+					async : false, 
+					success:function(data){
+						
+						if(data!=null&&data.length>0){
+							i=data.length;
+							for(var v=0;v<data.length;v++){
+								getProcessJoinForm(data[v].formName,data[v].bid,v,true);
+							}
+						}
+					}
+					
+			});
+			var url=basePath+"/processController/signRegisterInfo.htm";
+			if (typeof(isCrossDomain)!=undefined&&typeof(isCrossDomain)!="undefined"&&isCrossDomain)
+			{
+				url += "?"+commVariable;
+			}
+	 		$.ajax({
+					type:"post",
+					url:url,
+					data:{processInstanceId:processkey},
+					async : false, 
+					success:function(da){
+						$(".content").append(FlowCommPage.flowContent);
+						$(".flowPath").find("tbody").empty();
+						$("#flowPath_table_tr").text("流程流水号："+processkey);
+						if(da!=""||da!=null||da.length>0){
+							for(var v=0;v<da.length;v++){
+								var stepName="第"+(v+1)+"步";
+								var taskName=da[v].taskName;
+								var user=da[v].taskAssignee;
+								var btime=da[v].taskCreateTime;
+								var etime=da[v].taskEndTime;
+								var html="";
+								html+='<tr>';
+								html+='  <td  width="10%" align="center">'+stepName+'</td>';
+								html+='  <td width="20%">'+taskName+'</td>';
+								html+='  <td width="20%">'+user+'</td>';
+								html+='  <td width="25%">开始时间：'+btime+'</td>';
+								html+='  <td width="25%">结束时间：'+etime+'</td>';
+								html+='</tr>'
+								$(".flowPath").find("tbody").append(html);
+							}
+							
+						}
+					}
+				});
+			 return false;
+		}
+		
+		function getProcessJoinForm(pageName,bid,i,flag){
+			var u=basePath+"/formOpration/getFlowCommPage.htm";
+	 		if (typeof(isCrossDomain)!=undefined&&typeof(isCrossDomain)!="undefined"&&isCrossDomain)
+			{
+				u += "?"+commVariable;
+			}
+ 			$.ajax({
+				type:"post",
+				url:u,
+				data:{fName:pageName},
+				
+				async : false, 
+	
+				success:function(formdata){
+					var addElement=$(formdata).find("#add").attr("id","add_"+i);
+ 					addElement.find("#contern_grid").removeAttr("style");
+ 					var formimpotElement=$(formdata).find("#formimpot").attr("id","formimpot_"+i);
+ 					var fcp=$(FlowCommPage.content);
+					fcp.find(".box-title").text(addElement.attr("tittle"));
+ 					var wdiv=fcp.find("#flow_comm_wrap_form_div");
+ 					wdiv.append(addElement).append(formimpotElement);
+					$(".content").append(fcp);
+					
+					
+					if(bid!=null&&bid!=""){
+						formCommInit("add_"+i,bid);
+					}else{
+						formCommInit("add_"+i,"");
+					}
+					addElement.find("input,select,textarea,button").attr("disabled","disabled");
+					fcp.find(".box-footer").remove();
+					
+					
+					
+				}
+			});
+		}
+		
+			$(function(){
+				select(null);
+			});
+			var dt=undefined;index=1;
+			function select(selectType){
+				var url=basePath+"/processController/taskSelect.htm";
+				if (typeof(isCrossDomain)!=undefined&&typeof(isCrossDomain)!="undefined"&&isCrossDomain)
+				{
+					url += "?"+commVariable;
+				}
+				$.ajax({
+					type:"post",
+					url:url,
+					data:{"selectType":selectType},
+					dataType: 'json',
+					success:function(data){
+						index=1;
+						if(dt==undefined){
+							dt=$('#dataTable').dataTable( {
+							    data: data,
+							    paging: true,
+								lengthChange: false,
+						        searching: false,
+								processing: true,
+								oLanguage: {
+						        	sInfo: "总共：_TOTAL_ 条",
+								},
+								autoWidth: false,
+								bSort:false,
+								scrollX: true,
+							    columns: [
+								    { data: 'id',"mRender": function(data,type,full){
+				        			return index++;
+							        }},
+							        { data: 'pdfName' },
+							        { data: 'typeid'},
+							        { data: 'applyName' },
+							        { data: 'taskCreateTime' },
+							        { data: 'taskEndTime' },
+							        { data: 'taskAssignee' },
+							        { data: 'states' },
+							        { data: 'entityId',
+							        	"mRender": function(data,type,full){
+							        		return '<a href="<%=basePath%>/processController/viewImg.htm?processid=' +full.processkey + '" class="btn btn-primary btn-xs">查看流程图</a>&nbsp;'	
+						                    	+'<a href="#"  class="btn btn-primary btn-xs"  onclick="javascript:taskHandle('+"'"+full.processid+"','"+full.taskId+"','"+full.entityId+"'"+')">'+'详情</a>&nbsp;'
+					                    	+'</td>'
+										}
+							        	}
+							    ]
+							} );
+						}else{
+							dt.fnClearTable();
+							dt.fnAddData(data, true); 
+						}
+					}
+				});
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+#msform {
+	margin: 20px auto;
+	position: relative;
+	z-index: 999;
+	font-family: "Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif";
+}
+#msform .menu {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;	
+	box-sizing: border-box;
+	width: 100%;
+	position: relative;
+	min-height: 500px;
+}
+#msform .menu:not(:first-of-type) {
+	display: none;
+}
+/*headings*/
+#msform .fs-title {
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 20px;
+	color: #f39c12;
+}
+/*progressbar*/
+#msform #progressbar {
+	margin:0 0 30px 0;
+	padding: 0;
+	overflow: hidden;
+	counter-reset: step;
+	text-align: center;
+}
+#msform #progressbar li {
+	list-style-type: none;
+	color: #333;
+	text-transform: uppercase;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#msform #progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#msform #progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1;
+}
+#msform #progressbar li:first-child:after {
+	content: none; 
+}
+#msform #progressbar li.active:before,  #progressbar li.active:after{
+	background: #3C8DBC;
+	color: white;
+}
+
+
+
+
+
+
+
+

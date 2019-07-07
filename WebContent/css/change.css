@@ -1,0 +1,50 @@
+@charset "utf-8"; 
+@import url("");
+/*table-flow*/
+.padT{padding-top: 10px;}
+.padT_2{padding-top: 5px;}
+.dis{display: inline;}
+.magT{margin-top: 5px;}
+.formControl, .formContainer
+{
+    background: transparent; 
+    font-size:14px;
+    border: 1px solid none;
+	cursor: move;
+    color: #404040;
+    padding: 3px 15px;
+}
+
+.formControl:hover, .formContainer:hover {
+    background-color: #cccedb;
+    opacity: 0.8;
+}
+
+
+.formControl img, .formControl span
+{
+    vertical-align: middle;
+    padding-right: 6px;
+	margin-top: -3px;
+}
+
+
+.modify-label{
+    cursor: pointer;
+}
+
+.caret_title { margin-bottom: 5px; margin-top: 5px;}
+.caret_title:first-child { margin-top: 0px;}
+.caret_title a { font-size: 14px; color: #1e1e1e; font-weight: 600; }
+.caret_title a:hover { opacity: 0.8;}
+
+.quality { border-bottom: 1px solid #eeeef2; padding: 5px 0; }
+.quality a { color: #1e1e1e; font-weight: 600;}
+.quality a:hover { opacity: 0.8;}
+.quality_contern { padding: 10px 0 0;}
+
+.search_btn { clear: both; margin-bottom: 0px; overflow: hidden;}
+.search_btn .control-label { float: left; width: 35%; font-size: 12px; margin-bottom: 5px;}
+.search_btn .controls {  float: right; width: 65%; margin-bottom: 5px; }
+.search_btn .controls input, .search_btn .controls select { height: 26px!important; font-size: 12px!important; padding: 3px 12px; color: #111;}
+.search_btn .controls input { padding: 3px 15px;}

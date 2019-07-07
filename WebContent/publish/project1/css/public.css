@@ -1,0 +1,167 @@
+@charset "utf-8"; 
+@import url("userName.css");
+/*
+ * 1、公共样式
+ * -----------
+ */
+ 
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.cler {
+    clear: both;
+}
+.ov {
+    overflow: hidden;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.ml20 {
+    margin-left: 20px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.mar0 {
+    margin-right: 0;
+}
+.selectUive {
+    margin-right: 5px;
+}
+/*
+* table操作按钮
+* -------------
+*/
+.action-button a {
+    margin-right: 5px;
+}
+.action-button a:last-child {
+    margin-right: 0;
+}
+.table tbody {
+    font-size: 12px;
+}
+.table tbody td {
+    vertical-align: middle !important;
+}
+.table thead th {
+    font-size: 12px;
+}
+.dataTables_empty {
+    height: 380px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+/*
+ * 用户角色
+ * --------------------------
+ */
+ /*表格样式*/
+.add_uesr {
+    height: 550px;
+    border: 1px solid #eee;
+ }
+.add_uesr ul:nth-child(1) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.add_uesr ul:nth-child(2) {
+    list-style: none;
+}
+.add_list_user {
+    height: 550px;
+    border: 1px solid #eee;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.add_list_user h3 {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+.add_list_user label {
+    text-indent: 2em;
+    line-height: 24px;
+}
+.word_box label {
+    margin-left: 60px;
+    line-height: 24px;
+    font-weight: normal;
+}
+.add_list_users {
+    height: 594px;
+    border: 1px solid #eee;
+    overflow-y: auto;
+}
+
+/*
+* 树的border样式
+* --------------
+*/
+.list-group-item {
+    border: 0;
+}
+
+/*
+* 基础信息头像
+* ------------
+*/
+.basis-photo {
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 10px 20px;
+}
+.basis-photo .fl img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+}
+.basis-photo .fl p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.sign_title { font-size: 14px; font-weight: 600; background: #e1e1e1; padding: 10px; margin-bottom: 0px;}
+.sign { margin: 0px; padding: 10px; overflow: hidden; background: #fff;}
+.sign li p { margin-bottom: 5px;}
+.sign li { list-style: none; float: left; width: 25%; padding: 15px 20px; border: 1px solid #ddd; font-size: 14px; color: #666; margin-bottom: 10px; }
+.sign li span { font-size: 12px;}
+.sign li i { font-size: 12px;}
+
+.flowPath { width: 100%; border: 1px solid #cccccc; margin-top: 30px; background: #fff; margin-bottom: 50px;}
+.flowPath thead tr th { text-align: center; padding: 5px 0px; background: #e3e3e2; font-size: 12px;}
+.flowPath tbody tr td { border: 1px solid #cccccc; padding: 5px; font-size: 12px;}
+.flowPath tbody tr td p { margin-bottom: 4px; }
+.flowPath tbody tr td p b { color: red; text-decoration: underline; font-size: 14px;}
+.flow_greend { color: #008000;}
+
+.file_style { border: none; padding-left: 0px; margin-top: -5px; height: 100%; }
+.paging_simple_numbers { text-align: right; margin-top: -10px;}
+
+.action-buttons a { margin-right: 10px;}
+.action-buttons a:last-child { margin-right: 0px;}
+.dataTables_info { margin-top: 10px;}

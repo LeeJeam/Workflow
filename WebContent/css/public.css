@@ -1,0 +1,451 @@
+@charset "utf-8"; 
+/*
+*1、public-style
+*2、new
+*3、end-word
+*/
+.boundary { margin-bottom: 10px; border-top: 1px solid #999;}
+.modal-title { font-size: 16px;}
+
+.box-title-name { line-height: 30px !important; font-size: 14px !important; }
+.breadcrumb { font-size: 14px; font-weight: 400; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+
+.listBox li { margin-bottom: 10px; line-height: 24px; font-size: 12px; }
+.listBox li span { line-height: 30px; color: #999; font-size: 12px; }
+.listBox1 li { border-bottom: 1px solid #f4f4f4;}
+.listBox1 li a { padding: 2px 0;}
+.listBox1 li a span { margin-left: 20px;}
+
+.dataTables_scrollBody {
+	overflow: hidden !important;
+}
+
+.dataTables_paginate { margin-top: 10px!important;}
+.dataTables_info { margin-top: 10px!important;}
+
+.tab-content { padding: 10px 0!important;}
+
+.dataTables_empty { text-align: center !important; height: 360px;}
+/*搜索区域里面的search的按钮*/
+.search_btn { margin-top: 27px; }
+ @media (max-width: 767px) {
+	.search_btn { margin-top: 0; }
+}
+/*table里面操作按钮*/
+.input-group-addon i { cursor: pointer; }
+.action-buttons a { margin-right: 10px; }
+.action-buttons a:last-child { margin-right: 0; }
+/*table里面的内容居中*/
+.table th { padding-right: 8px !important; font-size: 12px; }
+.table td { vertical-align: middle !important; font-size: 12px; }
+/*搜索区域里面的label加粗效果去除*/
+#searchForm label { font-weight: normal !important;}
+/* 1、public-style*/
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.fl { float: left; }
+.fr { float: right; }
+.cler { clear: both; }
+.ov { overflow: hidden; }
+/* hr { margin: 0;} */
+.text-12 { font-size: 12px !important; }
+.text-14 { font-size: 14px !important; }
+.text-16 { font-size: 16px !important; }
+/*2、new*/
+.bg-gray-header { background: #d2d6de; color: #333; }
+.bg-gray-header .box-title { font-size: 16px; }
+/*3、end-word*/
+
+
+.add_hide {
+	display: none;
+}
+
+/*
+ * 3、我的绩效
+ * --------------------------
+ */
+ /*表格样式*/
+tfoot.basedata_font {
+	background: #ccc;
+}
+
+/*
+ * 4、用户管理--用户角色
+ * --------------------------
+ */
+ /*表格样式*/
+.add_uesr {
+ 	height: 560px;
+ 	border: 1px solid #ccc;
+ 	overflow-y: auto;
+ }
+.add_uesr ul:nth-child(1) {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.add_uesr ul:nth-child(2) {
+	list-style: none;
+}
+.add_list_user {
+	height: 560px;
+	border: 1px solid #ccc;
+	overflow-y: auto;
+}
+.add_list_user h3 {
+	margin: 10px 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 700;
+}
+.add_list_user label {
+	text-indent: 2em;
+	line-height: 24px;
+}
+.word_box label {
+	margin-left: 65px;
+	line-height: 24px;
+	font-weight: normal;
+}
+.add_list_users {
+	height: 594px;
+	border: 1px solid #eee;
+	overflow-y: auto;
+}
+
+
+/*
+*6、新建工作，所有表单的右边列表
+ * --------------------------
+ */
+
+.msgList { position: relative; padding: 5px 10px;}
+.tips { position: absolute; right: 2px; top: 3px; background: red; width: 8px; height: 8px; display: block; border-radius: 50%;}
+
+#menu {
+	width: 160px;
+	height: auto;
+	position: fixed;
+	top: 15%;
+	right: 10px;
+	margin-top: -40px;
+	z-index: 100;
+}
+#menu .textBox {
+	list-style-type: none;
+	background: url("../img/timeIma/time-bg.png") repeat-y scroll transparent;
+	background-position: 10px 0;
+	margin: 50px 0;
+	padding: 0;
+}
+#menu .textBox li {
+	position: relative;
+	margin-bottom: 45px;
+}
+#menu .textBox li a {
+	text-decoration: none;
+	color: #666;
+}
+#menu .textBox li a:hover {
+	color: #999;
+}
+#menu .textBox li .number {
+	border-radius: 50%;
+	position: absolute;
+	background: #999;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 16px;
+	color: #eee;
+}
+#menu .textBox li .time-text {
+	margin-left: 40px;
+}
+#menu .textBox li .time-text span {
+	display: block;
+	padding-top: 4px;
+}
+#menu .textBox li .active .number {
+	background-color: #0073b7;
+	color: #fff;
+}
+#menu .textBox li .active .time-text span {
+	color: #0073b7;
+}
+
+
+
+#menu-mobile {
+	position: absolute;
+	right: -5px;
+	top: 20px;
+	padding: 20px 0;
+	display: none;
+}
+#menu-mobile .textBox {
+	list-style-type: none;
+	background: url("../img/timeIma/time-bg.png") repeat-y scroll transparent;
+	background-position: 10px 0;
+	padding: 0;
+}
+#menu-mobile .textBox li {
+	position: relative;
+	margin-bottom: 45px;
+}
+#menu-mobile .textBox li:last-child {
+	margin-bottom: 0;
+}
+#menu-mobile .textBox li a {
+	text-decoration: none;
+	color: #777;
+}
+#menu-mobile .textBox li a:hover {
+	color: #999;
+}
+#menu-mobile .textBox li .number {
+	border-radius: 50%;
+	background: #d2d6de;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 16px;
+}
+#menu-mobile .textBox li .active .number {
+	background-color: #0073b7;
+	color: #fff;
+}
+
+
+a {
+	cursor: pointer;
+}
+/*
+ * 7、用户管理--用户角色
+ * --------------------------
+ */
+ /*表格样式*/
+#add_uesr_three li {
+	cursor: pointer;
+}
+#add_uesr_three .active {
+	color: #f39c12;
+}
+
+
+/*
+* 新建工作表单的底部提交按钮样式
+*
+*/
+.btnFooter {
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	-webkit-box-shadow: 10px 3px 20px #999;
+	box-shadow: 10px 3px 20px #999;
+	background: #5fafdd;
+	position: fixed;
+	bottom: 0px;
+	left: 0;
+	z-index: 9999;
+	padding-right:10px;
+	overflow: hidden;
+	color: #fff;
+	margin-left: 230px;
+	padding-right: 240px;
+}
+@media (max-width: 767px) {
+	.btnFooter { width: 100%; height: 46px; padding-right: 20px; margin-left: 0px;}
+}
+
+/*
+* 移动端样式
+*
+*/
+.item:last-child { margin-bottom: 60px;}
+
+.item-mobile { padding: 0; border: 0; background: #fff;}
+.item-mobile-list { margin: 0; padding: 0; background: #fff;}
+.item-mobile-list li:first-child { margin-top: 10px;}
+.item-mobile-list li:last-child { margin-bottom: 0px; border-bottom: none;}
+.item-mobile-list li { display: block; list-style: none;
+	width: 100%; min-height: 80px; padding:10px 40px 10px 10px;
+	margin: 0; position: relative; color: #333; border-left: 3px solid #fff; border-bottom: 1px solid #eee;}
+.item-mobile-list li:hover { background: #f5f5f5; border-left: 3px solid #3c8dbc;}
+.item-mobile-list li:active { background: #f5f5f5; border-left: 3px solid #3c8dbc;}
+.item-mobile-list li h3 { margin: 0; padding: 0; color: #3c8dbc;}
+.item-mobile-list li h3 span.text-12 { vertical-align: bottom;}
+.item-mobile-list li p { margin: 5px 0;}
+.item-mobile-btn { position: absolute; cursor: pointer; bottom: 15px; right: 6px;
+	width: 30px; height: 30px; display: block; text-align: center;}
+.item-mobile-btn .item-mobile-bg { background-size: 100%; width: 26px; height: 26px; display: block; 
+	background: url("../images/iconfont-caozuo.png"); background-size: 100%; cursor: pointer; }
+.am-share { font-size: 14px; border-radius: 0; bottom: 0; left: 0; position: fixed; 
+	text-align: center; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); 
+    transform: translateY(100%); -webkit-transition: -webkit-transform 300ms; transition: transform 300ms ; width: 100%; z-index: 1110; }
+.am-modal-active { transform: translateY(0px);  -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0) }
+.am-modal-out { z-index: 1109; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); transform: translateY(100%) }
+.am-share-footer { margin: 10px; }
+.am-share-footer .share_btn { color: #555;  display: block; width: 100%; background-color: #fff;
+	 border: 1px solid #e6e6e6; border-radius: 0; cursor: pointer;  font-size: 16px; 
+	 font-weight: 400; line-height: 1.2; padding: 0.625em 0; text-align: center;
+	  transition: background-color 300ms ease-out 0s, border-color 300ms ease-out 0s; 
+	  vertical-align: middle; white-space: nowrap;font-family:"微软雅黑";}
+.am-share-sns { background-color: #f8f8f8; border-radius: 0 0 2px 2px; margin: 0 10px; height:auto; zoom:1; overflow:auto; }
+.sharebg { background-color: rgba(0, 0, 0, 0.6); bottom: 0; height: 100%; left: 0; opacity: 0; position: fixed; right: 0; top: 0; width: 100%; z-index: 1100; display:none; }
+.sharebg-active { opacity: 1; display:block; }
+#tab-icon-this { background: #f39c12; color: #fff; border: none;}
+#tab-icon-active { background: #00c0ef; color: #fff; border: none;}
+#serch-hide { width: 100%; height: 500px; margin: 0; background: #fff;
+	overflow: hidden; position: fixed; top: 0px; left: 0; display: none; z-index: 9999;}
+#serch-hide .modal-body h3.text-center { margin: 0; padding: 0 0 10px 0;}
+/*--------------------------- 鍏叡鏍峰紡 ------------------------------*/
+.form-control[readonly]  { cursor:no-drop; background: #cccccc; border: 1px solid #999; color: #888; }
+
+.padd-top7 { padding-top: 7px;}
+.mp { margin: 0; padding: 0; }
+.listNone { list-style: none; }
+.lsitHeight15 { line-height: 26px; }
+
+/*----------------------------- 棣栭〉 ---------------------------------*/
+.roundBox { width: 200px; height: 200px; margin: 10px auto; background: red; border-radius: 50%; position: relative; }
+.roundBoxS { width: 150px; height: 150px; position: absolute; left: 50%; top: 50%; margin: -75px 0 0 -75px; background: #fff; border-radius: 50%; text-align: center; }
+.roundBoxS h3 { margin-top: 45px; }
+.roundBoxS p { font-size: 16px; }
+.roundBg1 { background: #00c0ef; }
+.roundBg2 { background: #ff851b; }
+.roundBg3 { background: #39CCCC; }
+.roundBg4 { background: #D81B60; }
+
+
+
+/*------------------------浜у搧璧勬枡  鏂板浜у搧鍒楄〃--------------------------*/
+.guild { line-height: 34px; }
+
+/*------------------------浜у搧璧勬枡  浜у搧璇︽儏椤�-------------------------*/
+/*鍟嗗搧鎻忚堪*/
+.columns { font-size: 16px; margin-top: 0; padding-top: 0; }
+.columnsList strong { line-height: 30px; }
+.columnsList p { line-height: 22px; text-indent: 2em; }
+/*瑙勬牸鍙傛暟*/
+.tableDetails { }
+.tableDetails tr th { text-align: center; }
+.tableDetails tr td:nth-child(1){ text-align:right; }
+/*鐩稿叧璧勬枡*/
+.datum li { line-height: 24px; }
+.datum li span { color: #333; margin-right: 20px; }
+.datum li span:hover { text-decoration: underline; cursor: pointer; color: red; }
+.datum li a { color: 12px; }
+
+
+/*--------------------------------- 椤圭洰鏃ュ織 -------------------------------------*/
+.operateBox { position: relative; font-size: 12px;}
+.operateList {font-size: 12px; background: #ACD6FF;}
+.operateBoxMenu { min-width: 100%; overflow: hidden; z-index: 9999; text-align: center; }
+.mailbox-attachment { color: #999; }
+.textSpace { float: left; width: 240px; overflow: hidden; clear: left; text-align: right; text-overflow: ellipsis; white-space: nowrap; }
+
+
+/*--------------------------------- 鐢ㄦ埛绠＄悊 -------------------------------------*/
+.userContern { margin-bottom: 15px; }
+.userContern .user-header { background-color: #3c96bc ; text-align: center; color: #fff; padding: 20px 0; }
+.userContern .user-body { background-color: #fff; border: 1px solid #f4f4f4; overflow: hidden;  text-align: center; color: #fff; }
+.userContern .user-body div { border-left: 1px solid #f4f4f4; }
+.userContern .user-body div a:hover { color: #ed5840;}
+.userContern .user-body div:first-child { border-left: 0;}
+.userContern .user-body div a { line-height: 40px; padding: 20px 0;}
+
+
+/*--------------------------------- 鏂板淇敼鐨剅adio -------------------------------------*/
+.has-feedback label ~ .form-control-feedback {
+  top: 0!important;
+  right: 0px!important;
+}
+
+/*--------------------------------- top -------------------------------------*/
+.supText { font-size: 14px; font-weight: bold;}
+.supText1 { font-size: 14px; font-weight: bold; color: red; vertical-align: middle; margin-right: 5px;}
+.form-control[disabled] { background: #fff; }
+.textarea[disabled] { background: #fff; color: #777}
+.textarea { width: 100%; height: 64px; font-size: 14px; line-height: 18px; border: 1px solid #999; padding: 10px; }
+.form-control1 { border-bottom: #d2d6de solid 1px; line-height: 17.142858505249px; margin: 0; padding: 6px 12px;}
+.form-control1 .spanG { color: #999; }
+
+.stop { line-height: 30px; background: #999; }
+
+.selectUive { margin-right: 5px; }
+@media (max-width: 767px){
+   .selectUive { margin-right: 0; width: 100%; margin-top: 10px; }
+}
+@media (min-width: 768px) and (max-width: 979px){
+   .selectUive { margin-right: 0; width: 100%; margin-top: 10px; }
+}
+
+.toolsTop { margin-top: -14px;}
+.toolsTop a { font-size: 14px;}
+.toolsTop1 { margin-top: -24px;}
+.toolsTop1 a { font-size: 12px;}
+
+.slectPerson { cursor: pointer;}
+
+/*--------------------------------- endWord.html -------------------------------------*/
+.endList li .aBox { margin: 0; padding: 10px 0 5px; }
+.endList .aBox h4 { color: #000; font-size: 16px; padding-top: 0; margin-top: 0; }
+.endList .aBox button { margin-top: -4px;}
+
+.performance-title1 { color: #000; font-size: 16px; font-weight: 600; }
+.performance-title2 { font-size: 12px; color: #666; padding-right: 2px; line-height: 17px; }
+.performance-cont { font-size: 14px; font-weight: 600; }
+
+/*-----------------------------------  閫変汉寮圭獥  -------------------------------------------------*/
+.xuanrenBox li { border-bottom: 1px solid #f4f4f4; margin-top: 0px;}
+.xuanrenBox li .msg { color: #444; font-size: 12px; }
+.xuanrenBox li .msg i { font-size: 16px; color: #444; }
+
+.xuanrenBox li .uesr { width: 30px; height: 30px; display: block; border-radius: 50%; float: left; line-height: 30px; margin-top: 4px; text-align: center; color: #fff; font-size: 10px;  }
+.xuanrenBox li .uesrName .uesrName1 { margin-left: 10px; font-size: 12px; }
+.xuanrenBox li .uesrName .uesrName2 { margin-left: 10px; font-size: 10px; font-weight: normal; }
+
+
+.xuanrenBox1 li { border-bottom: 1px solid #ccc;}
+.xuanrenBox1 li .uesr { width: 30px; height: 30px; display: block; border-radius: 50%; float: left; line-height: 30px; margin-top: 4px; text-align: center; color: #fff; font-size: 10px;  }
+.xuanrenBox1 li .uesrName .uesrName1 { margin-left: 10px; font-size: 12px; }
+.xuanrenBox1 li .uesrName .uesrName2 { margin-left: 10px; font-size: 10px; font-weight: normal; }
+
+.xuanrenBoxX li { border-bottom: 1px solid #ccc;}
+.xuanrenBoxX li .uesr { width: 30px; height: 30px; display: block; border-radius: 50%; float: left; line-height: 30px; margin-top: 4px; text-align: center; color: #fff; font-size: 12px;  }
+.xuanrenBoxX li .uesrName .uesrName1 { margin-left: 10px; font-size: 14px; }
+.xuanrenBoxX li .uesrName .uesrName2 { margin-left: 10px; font-size: 12px; font-weight: normal; }
+
+
+
+/*-----------------------------------  涔樿溅宸ユ椂  -------------------------------------------------*/
+.ridingBoxUive { position: relative;}
+.ridingBoxUive h5 strong { font-size: 18px; font-weight: bold; }
+.ridingBoxUive h5 span { font-size: 12px; }
+.ridingBoxUive h5 .pull-right { line-height: 22px;}
+.ridingBoxUive .ridingBorder { border-top: 1px #eee dashed; margin-bottom: 10px; }
+.ridingBoxUive .ridingBorders { border-top: 1px #eee dashed; margin: 10px 0; }
+.ridingBoxUive button { position: absolute; right: 10px; top: 8px; }
+
+/*-----------------------------------  閫変汉鎵嬫焺 ---------------------------------------------------*/
+.input-group-addon i { cursor: pointer;}
+.unit { background: #ccc!important; color: #666!important; border: 1px solid #999!important; border-left: 0px!important; font-size: 12px; }
+
+/*------------------------------------ 澶氶�鎺т欢鏍峰紡------------------------------------------------*/
+.add-user-demo { margin: 0; padding: 0; width: 100%; overflow: auto; min-height: 34px; border: #ccc solid 1px; }
+.add-user-demo li { list-style: none; display: block; float: left; margin: 10px 10px 5px 0px; background: #3c8dbc; padding: 2px 10px; color: #fff; border-radius: 4px; cursor: default; }
+.add-user-demo li:first-child { margin-left: 10px;}
+.add-user-demo li i { cursor: pointer;}
+.hidden{display: none;}
+
+/*上传控件html显示样式*/
+.fileDemo-show { margin: 0; padding: 0; }
+.fileDemo-show li { list-style: none;}
+.fileDemo-show p { margin: 0 20px 0 0; padding: 0; line-height: 17px; width: 210px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+.inputs{cursor:pointer !important;}

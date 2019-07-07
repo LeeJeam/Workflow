@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.hy.commForm.dao.AttachmentDao">
+	<cache eviction="LRU" flushInterval="60000" size="1024" readOnly="true" />
+	<resultMap id="BaseResultMap" type="cn.hy.commForm.pojo.Attachment">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="filename" property="filename" jdbcType="VARCHAR" />
+		<id column="type" property="type" jdbcType="VARCHAR" />
+		<id column="filepath" property="filepath" jdbcType="VARCHAR" />
+		<id column="filesize" property="filesize" jdbcType="INTEGER" />
+		<id column="selectorid" property="selectorid" jdbcType="VARCHAR" />
+		<id column="formid" property="formid" jdbcType="INTEGER" />
+		<id column="projectId" property="projectId" jdbcType="INTEGER" />
+		<id column="funNames" property="funNames" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="selectBySQL" parameterType="java.lang.String"
+		resultType="java.util.HashMap">
+		${ _parameter}
+	</select>
+	<select id="selectMapBySQL" parameterType="java.lang.String"
+		resultType="java.util.HashMap">
+		${ _parameter}
+	</select>
+	<insert id="insertBySQL" parameterType="java.lang.String"
+		useGeneratedKeys="true" keyProperty="id">
+		${ _parameter}
+	</insert>
+	<insert id="inserts" parameterType="cn.hy.commForm.pojo.Attachment" >
+    insert into t_u_attachment (
+	    filename,
+
+	  	 type,
+	
+	    filepath,
+	
+	    filesize,
+	    
+	   selectorid,
+	
+	    formid,
+	    projectId,
+	    funNames
+      )
+    values (
+        #{filename},
+        #{type},
+        #{filepath},
+        #{filesize},
+        #{selectorid},
+        #{formid},
+        #{projectId},
+        #{funNames}
+      )
+  </insert>
+	<update id="updateBySQL" parameterType="java.lang.String">
+		${ _parameter}
+	</update>
+	<delete id="deleteBySQL" parameterType="java.lang.String">
+		${ _parameter}
+	</delete>
+</mapper>

@@ -1,0 +1,60 @@
+@charset "utf-8"; 
+@import url("userName.css");
+/*
+ * 1、公共样式
+ * -----------
+ */
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.cler {
+    clear: both;
+}
+.ov {
+    overflow: hidden;
+}
+.dataTables_empty {
+	text-align: center;
+}
+/*
+* table操作按钮
+* -------------
+*/
+.table td {
+    font-size: 12px;
+    vertical-align: middle !important;
+}
+.table th {
+    font-size: 12px;
+    vertical-align: middle !important;
+}
+.control-label {
+    padding-top: 5px !important;
+    font-weight: normal;
+}
+
+.page_search_btn input { margin-top: -2px; }
+.dataTables_empty { height: 330px; line-height: 279px;}
+.unit { background: #ccc!important; color: #666!important; border: 1px solid #999!important; font-size: 12px; }
+
+.selectUive { margin-right: 5px; }
+@media (max-width: 767px){
+   .selectUive { margin-right: 0; width: 100%; margin-top: 10px; }
+}
+@media (min-width: 768px) and (max-width: 979px){
+   .selectUive { margin-right: 0; width: 100%; margin-top: 10px; }
+}
+.supText1 { font-size: 14px; font-weight: bold; color: red; vertical-align: middle; margin-right: 5px;}
+.nav-stacked li { white-space: nowrap;}

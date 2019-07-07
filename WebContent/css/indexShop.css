@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+.secHeader {
+	width: 60%;
+	margin: 0 auto;
+}
+.secHeader h4 {
+	text-transform: uppercase;
+	color: #00ACE9;
+	letter-spacing: 2px;
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 20px;	
+}
+.secHeader p {
+	letter-spacing: 1px;
+}
+.blok {
+	margin-bottom: 20px;
+}
+.blok h4 {
+	font-size: 14px;
+	font-weight: 600;
+}
+.blok h5 {
+	font-size: 12px;
+	padding: 10px 0;
+	color: #777;
+}
+.hexagon-a {
+	height: 160px;
+	margin-top: 6px;
+	position: absolute;
+	z-index: 300;
+	left: 50%;
+	margin-left: -55px;
+}
+.hexagon-a a {
+	margin: 0 auto;
+	width: 26%;
+	display: block;
+	min-width: 110px;
+	position: relative;
+}
+.hexagon-a a.hlinktop:hover .hexa-a {
+	background: #00ACE9;
+	color: #fff;
+}
+.hexagon {
+	height: 150px;
+	margin-top: 20px;
+}
+.hexagon a.hlinkbott {
+	margin: 0 auto;
+	width: 26%;
+	display: block;
+	min-width: 120px;
+	position: relative;
+}
+.hexagon a.hlinkbott:hover .hexa {
+	background: #0094D3;
+}
+.hexa-a {
+	width: 100%;
+	min-width: 110px;
+	height: 0;
+	padding-bottom: 57.7%;
+	margin: 30% 0 0;
+	background: #fff;
+	position: absolute;
+	color: #00ACE9;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 32px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-webkit-transition-delay: 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+	border-radius: 0%;
+}
+.hexa-a:before, .hexa-a:after {
+	content: "";
+	display: block;
+	width: inherit;
+	height: inherit;
+	padding: inherit;
+	background: inherit;
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-ms-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+	transform: rotate(60deg);
+	z-index: 0;
+	position: absolute;
+	border-radius: inherit;
+}
+.hexa-a:after {
+	-webkit-transform: rotate(-60deg);
+	-moz-transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg);
+	-o-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+}
+.hcontainer-a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+.vertical-align-a {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.texts-a {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+} 
+.hexa {
+	width: 100%;
+	min-width: 120px;
+	height: 0;
+	padding-bottom: 57.7%;
+	margin: 30% 0 0;
+	background: #3c8dbc;
+	position: absolute;
+	color: #FFF;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 14px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-webkit-transition-delay: 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+	border-radius: 0%;
+}
+.hexa:before, .hexa:after {
+	content: "";
+	display: block;
+	width: inherit;
+	height: inherit;
+	padding: inherit;
+	background: inherit;
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-ms-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+	transform: rotate(60deg);
+	z-index: 0;
+	position: absolute;
+	border-radius: inherit;
+}
+.hexa:after {
+	-webkit-transform: rotate(-60deg);
+	-moz-transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg);
+	-o-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+}
+.hcontainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+.vertical-align {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.texts {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}

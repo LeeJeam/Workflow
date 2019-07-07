@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.hy.flowmanage.dao.ProcessNodeEntityDao" >
+  <resultMap id="BaseResultMap" type="cn.hy.flowmanage.pojo.ProcessNodeEntity" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="taskname" property="taskname" jdbcType="VARCHAR" />
+    <result column="processid" property="processid" jdbcType="VARCHAR" />
+    <result column="formid" property="formid" jdbcType="VARCHAR" />
+    <result column="pageName" property="pagename" jdbcType="VARCHAR" />
+    <result column="authority_user" property="authorityUser" jdbcType="VARCHAR" />
+    <result column="authority_role" property="authorityRole" jdbcType="VARCHAR" />
+    <result column="is_bursar" property="isBursar" jdbcType="VARCHAR" />
+    <result column="msg" property="msg" jdbcType="VARCHAR" />
+    <result column="sendcopyuser" property="sendcopyuser" jdbcType="VARCHAR" />
+    <result column="signuser" property="signuser" jdbcType="VARCHAR" />
+    <result column="tasksendcopyuser" property="tasksendcopyuser" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="selectBySQL" parameterType="java.lang.String"
+		resultType="java.util.HashMap">
+		${ _parameter}
+	</select>
+	<select id="selectMapBySQL" parameterType="java.lang.String"
+		resultType="java.util.HashMap">
+		${ _parameter}
+	</select>
+	<insert id="insertBySQL" parameterType="java.lang.String">
+		${ _parameter}
+	</insert>
+	<update id="updateBySQL" parameterType="java.lang.String">
+		${ _parameter}
+	</update>
+	<delete id="deleteBySQL" parameterType="java.lang.String">
+		${ _parameter}
+	</delete>
+</mapper>

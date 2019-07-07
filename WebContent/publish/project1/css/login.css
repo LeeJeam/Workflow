@@ -1,0 +1,16 @@
+@charset "utf-8";
+/*
+	1、登录界面
+*/
+body{height: 100%; background: #087fce;}
+.login_box{position: absolute; left: 50%; top: 50%; margin-left: -210px; margin-top: -200px; width: 420px; height: 400px;}
+.col-xs-4 {width: 100%;}
+.form-group {margin-top: 15px;margin-bottom: 0;}
+.checkbox {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.main-footer {margin-left: 0;position: absolute;bottom: 0;width: 100%;}
+.form-control-feedback{color: #D8D8D8;}
+
+.btn{margin-top: 20px;}
